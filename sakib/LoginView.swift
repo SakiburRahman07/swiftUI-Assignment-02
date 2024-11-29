@@ -189,6 +189,22 @@ struct LoginView: View {
         }
     }
 
+    private func addTask(title: String) {
+        let db = Firestore.firestore()
+        let newTask = [
+            "Title": title,
+            "DateAdded": Timestamp()
+        ] as [String: Any]
+
+        db.collection("ToDos").addDocument(data: newTask) { error in
+            if let error = error {
+                print("Error adding task: \(error.localizedDescription)")
+            } else {
+                newTaskName = ""
+            }
+        }
+    }
+
     
 }
 
