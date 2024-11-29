@@ -231,4 +231,29 @@ struct LoginView: View {
     
 }
 
+struct ToDo: Identifiable {
+    var id: String
+    var title: String
+    var dateAdded: Date
+    var isEditing: Bool = false
+
+
+    init(id: String, data: [String: Any]) {
+        self.id = id
+        self.title = data["Title"] as? String ?? "Untitled Task"
+        if let timestamp = data["DateAdded"] as? Timestamp {
+            self.dateAdded = timestamp.dateValue()
+        } else {
+            self.dateAdded = Date()
+        }
+    }
+
+
+    var dateFormatted: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        return formatter.string(from: dateAdded)
+    }
+}
 
