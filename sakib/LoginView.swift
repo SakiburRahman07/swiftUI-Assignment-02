@@ -205,6 +205,29 @@ struct LoginView: View {
         }
     }
 
+    private func deleteTask(todo: ToDo) {
+        let db = Firestore.firestore()
+        db.collection("ToDos").document(todo.id).delete { error in
+            if let error = error {
+                print("Error deleting task: \(error.localizedDescription)")
+            } else {
+                print("Task \(todo.title) deleted successfully")
+            }
+        }
+    }
+
+
+    private func updateTask(todo: ToDo) {
+        let db = Firestore.firestore()
+        db.collection("ToDos").document(todo.id).updateData(["Title": todo.title]) { error in
+            if let error = error {
+                print("Error updating task: \(error.localizedDescription)")
+            } else {
+                print("Task updated to \(todo.title)")
+            }
+        }
+    }
+
     
 }
 
