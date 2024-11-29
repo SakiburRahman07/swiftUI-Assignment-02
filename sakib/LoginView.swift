@@ -165,6 +165,31 @@ struct LoginView: View {
         }
         
     }
+    private func login() {
+        Auth.auth().signIn(withEmail: email, password: password) { _, error in
+            if let error = error {
+                errorMessage = error.localizedDescription
+            } else {
+                isLoggedIn = true
+            }
+        }
+    }
+
+    private func fetchTasks() {
+        let db = Firestore.firestore()
+        db.collection("ToDos").addSnapshotListener { snapshot, error in
+            if let error = error {
+                print("Error fetching tasks: \(error.localizedDescription)")
+                return
+            }
+
+            self.todos = snapshot?.documents.map { doc in
+                ToDo(id: doc.documentID, data: doc.data())
+            } ?? []
+        }
+    }
+
+    
 }
 
 
