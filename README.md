@@ -46,7 +46,7 @@ Welcome to the **Firebase Authentication & Firestore CRUD** assignment repositor
 ---
 
 ### 🎥 Demo Video  
-📺 Watch the full demo of how the app works [here](https://youtube.com/your-video-link).  
+📺 Watch the full demo of how the app works [Video Link]([https://youtube.com/your-video-link](https://youtu.be/TRAlEdjRPf0)).  
 
 ---
 
