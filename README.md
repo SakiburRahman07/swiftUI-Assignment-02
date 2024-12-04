@@ -31,17 +31,17 @@ Welcome to the **Firebase Authentication & Firestore CRUD** assignment repositor
 
 ### 🖼️ Screenshots  
 1️⃣ **Task ListView**  
-![Task ListView](image-folder/1.png)  
+![Task ListView](image/1.png)  
 
 2️⃣ **Registration Screen**  
-![Registration Screen](image-folder/2.png)  
+![Registration Screen](image/2.png)  
 
 3️⃣ & 4️⃣ **Code Snippets**  
-![Code Snippet 1](image-folder/3.png)  
-![Code Snippet 2](image-folder/4.png)  
+![Code Snippet 1](image/3.png)  
+![Code Snippet 2](image/4.png)  
 
 5️⃣ **Login Screen**  
-![Login Screen](image-folder/5.png)  
+![Login Screen](image/5.png)  
 
 ---
 
